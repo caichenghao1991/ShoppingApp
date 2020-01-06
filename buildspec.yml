@@ -1,0 +1,20 @@
+version: 0.2
+env:
+  variables:
+    spring.profiles.active=prod
+phases:
+  install:
+    runtime-versions:
+      java: openjdk8
+    commands:
+      - echo Installation done
+  build:
+    commands:
+      - echo Entered the build phase...
+      - clean package -DskipTests
+  post_build:
+    commands:
+      - echo Entered the post_build phase...
+artifacts:
+  files:
+    - target/ProductCatalogDemo.jar
